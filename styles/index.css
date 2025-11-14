@@ -1,4 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.header-nav {
+  list-style-type: none;
+  display:flex;
+  gap: 20px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #000;
 }
