@@ -1,15 +1,15 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  
+  box-sizing: border-box;  
 }
+
+/*Navigation*/
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .header-top {
   display: flex;
   justify-content: space-between;
@@ -19,7 +19,7 @@
 
 .header-nav {
   list-style-type: none;
-  display:flex;
+  display: flex;
   gap: 20px;
 }
 
@@ -27,3 +27,84 @@
   text-decoration: none;
   color: #000;
 }
+
+/*Slider*/
+
+
+.slider {
+  padding-top:30px ;
+  padding-bottom:30px ;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider input[type="radio"] {
+  display: none;
+}
+
+.slider-images {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s ease;
+}
+
+.slider-images .item {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-images .item img {
+  max-width: 100%;
+  height: auto;
+}
+
+#slide-1:checked ~ .slider-images {
+  transform: translateX(0%);
+}
+
+#slide-2:checked ~ .slider-images {
+  transform: translateX(-33.33%);
+}
+
+#slide-3:checked ~ .slider-images {
+  transform: translateX(-66.66%);
+}
+
+.slider-buttons:not(input) {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slider-buttons:not(input) label {
+  width: 12px;
+  height: 12px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#slide-1:checked ~ .slider-buttons:not(input) label[for="slide-1"],
+#slide-2:checked ~ .slider-buttons:not(input) label[for="slide-2"],
+#slide-3:checked ~ .slider-buttons:not(input) label[for="slide-3"] {
+  background: #333;
+}
+
+
+/*Most searched section*/
+
+/* #aa{ 
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+
+} */
+
+
