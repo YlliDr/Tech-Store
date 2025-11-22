@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <title>Component Examples - TechStore</title>
+
+    <!-- Import Web Components -->
+    <script src="components/Header.js" defer></script>
+    <script src="components/Footer.js" defer></script>
+    <script src="components/ProductCard.js" defer></script>
+    <script src="components/ReviewCard.js" defer></script>
+    <script src="components/ImageGallery.js" defer></script>
+    <script src="components/Notification.js" defer></script>
+
+    <style>
+        .example-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .example-section:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .example-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .example-description {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .code-example {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .code-example pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Component -->
+    <app-header></app-header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Component Examples</h1>
+                <p>See how to use all the reusable components in your pages</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Card Examples -->
+    <section class="example-section">
+        <div class="container">
+            <h2 class="example-title">Product Card Component</h2>
+            <p class="example-description">
+                The ProductCard component displays product information in a beautiful card format.
+                It includes quick add to cart functionality and emits custom events.
+            </p>
+
+            <div class="code-example">
+                <pre>&lt;product-card 
+  name="Gaming Laptop Pro" 
+  price="1299.00"
+  image="laptop.jpg"
+  rating="5"
+  reviews="156"
+  link="product.html"&gt;
+&lt;/product-card&gt;</pre>
+            </div>
+
+            <div class="products-grid">
+                <product-card name="Gaming Laptop Pro" price="1299.00"
+                    image="https://via.placeholder.com/300/4a5568/FFFFFF?text=Gaming+Laptop" rating="5" reviews="156"
+                    link="product.html">
+                </product-card>
+
+                <product-card name="Wireless Mouse RGB" price="49.99"
+                    image="https://via.placeholder.com/300/6366f1/FFFFFF?text=RGB+Mouse" rating="4" reviews="89"
+                    link="product.html">
+                </product-card>
+
+                <product-card name="Mechanical Keyboard" price="159.00"
+                    image="https://via.placeholder.com/300/22c55e/FFFFFF?text=Keyboard" rating="5" reviews="234"
+                    link="product.html">
+                </product-card>
+
+                <product-card name="4K Monitor 27 inch" price="399.00"
+                    image="https://via.placeholder.com/300/f59e0b/FFFFFF?text=4K+Monitor" rating="5" reviews="178"
+                    link="product.html">
+                </product-card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Card Examples -->
+    <section class="example-section">
+        <div class="container">
+            <h2 class="example-title">Review Card Component</h2>
+            <p class="example-description">
+                Display customer reviews with ratings, author information, and review content.
+                Perfect for product pages and testimonials.
+            </p>
+
+            <div class="code-example">
+                <pre>&lt;review-card 
+  rating="5" 
+  title="Excellent product!"
+  author="John Doe"
+  date="15.11.2024"
+  content="This product exceeded my expectations..."&gt;
+&lt;/review-card&gt;</pre>
+            </div>
+
+            <div class="reviews-grid">
+                <review-card rating="5" title="Excellent product!" author="John Doe" date="15.11.2024"
+                    content="This product exceeded my expectations. Great quality and fast shipping!">
+                </review-card>
+
+                <review-card rating="4" title="Very good" author="Jane Smith" date="10.11.2024"
+                    content="Good value for money. Works as described. Would recommend.">
+                </review-card>
+
+                <review-card rating="5" title="Perfect!" author="Mike Johnson" date="05.11.2024"
+                    content="Exactly what I needed. The build quality is outstanding and it arrived quickly.">
+                </review-card>
+
+                <review-card rating="5" title="Highly recommend" author="Sarah Williams" date="01.11.2024"
+                    content="Best purchase I've made this year. The product is fantastic and customer service was great.">
+                </review-card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Example -->
+    <section class="example-section">
+        <div class="container">
+            <h2 class="example-title">Image Gallery Component</h2>
+            <p class="example-description">
+                An interactive image gallery with thumbnail navigation.
+                Perfect for product pages to showcase multiple product images.
+            </p>
+
+            <div class="code-example">
+                <pre>&lt;image-gallery 
+  images="image1.jpg,image2.jpg,image3.jpg"&gt;
+&lt;/image-gallery&gt;</pre>
+            </div>
+
+            <div style="max-width: 500px; margin: 30px auto;">
+                <image-gallery
+                    images="https://via.placeholder.com/400/6366f1/FFFFFF?text=Image+1,https://via.placeholder.com/400/22c55e/FFFFFF?text=Image+2,https://via.placeholder.com/400/f59e0b/FFFFFF?text=Image+3,https://via.placeholder.com/400/ef4444/FFFFFF?text=Image+4">
+                </image-gallery>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Component Example -->
+    <section class="example-section">
+        <div class="container">
+            <h2 class="example-title">Toast Notification Component</h2>
+            <p class="example-description">
+                Show beautiful toast notifications with different types and auto-dismiss.
+                Try clicking the buttons below!
+            </p>
+
+            <div class="code-example">
+                <pre>// Show a success notification
+showToast('Product added to cart!', 'success');
+
+// Show an error notification
+showToast('Something went wrong!', 'error');
+
+// Show a warning notification
+showToast('Please check your input', 'warning');
+
+// Show an info notification
+showToast('New feature available!', 'info');</pre>
+            </div>
+
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <button onclick="showToast('Operation completed successfully!', 'success')"
+                    style="padding: 12px 24px; background: #00cc66; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600;">
+                    Show Success
+                </button>
+                <button onclick="showToast('An error occurred. Please try again.', 'error')"
+                    style="padding: 12px 24px; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600;">
+                    Show Error
+                </button>
+                <button onclick="showToast('Warning: This action cannot be undone!', 'warning')"
+                    style="padding: 12px 24px; background: #f59e0b; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600;">
+                    Show Warning
+                </button>
+                <button onclick="showToast('New updates are available for download.', 'info')"
+                    style="padding: 12px 24px; background: #00a0e3; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600;">
+                    Show Info
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Handling Example -->
+    <section class="example-section">
+        <div class="container">
+            <h2 class="example-title">Event Handling</h2>
+            <p class="example-description">
+                Components can emit custom events that you can listen to.
+                Try clicking the "Quick Add" button on any product card above!
+            </p>
+
+            <div class="code-example">
+                <pre>// Listen for product-added events
+document.addEventListener('product-added', (event) => {
+  const { productName, productPrice } = event.detail;
+  console.log(\`Added: \${productName} - \${productPrice}€\`);
+  
+  // Add to cart, show notification, etc.
+  updateCart(productName, productPrice);
+});</pre>
+            </div>
+
+            <div id="event-log"
+                style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 8px; min-height: 100px;">
+                <h3 style="margin-bottom: 15px; color: #333;">Event Log:</h3>
+                <div id="log-content" style="color: #666; font-family: monospace; font-size: 14px;">
+                    <p>Click "Quick Add" on any product to see events here...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Component Props Table -->
+    <section class="example-section">
+        <div class="container">
+            <h2 class="example-title">Component Props Reference</h2>
+
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px; color: #333;">ProductCard Props:</h3>
+                <table
+                    style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #00a0e3; color: white;">
+                            <th style="padding: 15px; text-align: left;">Prop</th>
+                            <th style="padding: 15px; text-align: left;">Type</th>
+                            <th style="padding: 15px; text-align: left;">Default</th>
+                            <th style="padding: 15px; text-align: left;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>name</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">"Product Name"</td>
+                            <td style="padding: 15px;">Product name/title</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>price</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">"0.00"</td>
+                            <td style="padding: 15px;">Product price</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>image</code></td>
+                            <td style="padding: 15px;">String (URL)</td>
+                            <td style="padding: 15px;">Placeholder</td>
+                            <td style="padding: 15px;">Product image URL</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>rating</code></td>
+                            <td style="padding: 15px;">Number (1-5)</td>
+                            <td style="padding: 15px;">5</td>
+                            <td style="padding: 15px;">Star rating</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>reviews</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">"0"</td>
+                            <td style="padding: 15px;">Number of reviews</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;"><code>link</code></td>
+                            <td style="padding: 15px;">String (URL)</td>
+                            <td style="padding: 15px;">"#"</td>
+                            <td style="padding: 15px;">Product detail page link</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3 style="margin-bottom: 20px; color: #333;">ReviewCard Props:</h3>
+                <table
+                    style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: #00a0e3; color: white;">
+                            <th style="padding: 15px; text-align: left;">Prop</th>
+                            <th style="padding: 15px; text-align: left;">Type</th>
+                            <th style="padding: 15px; text-align: left;">Default</th>
+                            <th style="padding: 15px; text-align: left;">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>rating</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">"5"</td>
+                            <td style="padding: 15px;">Star rating (1-5)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>title</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">"Bewertung"</td>
+                            <td style="padding: 15px;">Review title</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>author</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">"Anonym"</td>
+                            <td style="padding: 15px;">Reviewer name</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e0e0e0;">
+                            <td style="padding: 15px;"><code>date</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">Current date</td>
+                            <td style="padding: 15px;">Review date</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;"><code>content</code></td>
+                            <td style="padding: 15px;">String</td>
+                            <td style="padding: 15px;">""</td>
+                            <td style="padding: 15px;">Review text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <app-footer></app-footer>
+
+    <script>
+        // Event listener for product-added events
+        document.addEventListener('product-added', (event) => {
+            const { productName, productPrice } = event.detail;
+            const logContent = document.getElementById('log-content');
+            const timestamp = new Date().toLocaleTimeString('de-DE');
+
+            const logEntry = document.createElement('p');
+            logEntry.style.marginBottom = '8px';
+            logEntry.style.padding = '8px';
+            logEntry.style.background = '#e8f5e9';
+            logEntry.style.borderRadius = '4px';
+            logEntry.style.borderLeft = '3px solid #00cc66';
+            logEntry.innerHTML = `<strong>[${timestamp}]</strong> Added: ${productName} - ${productPrice}€`;
+
+            // Clear initial message if it exists
+            if (logContent.querySelector('p')?.textContent.includes('Click')) {
+                logContent.innerHTML = '';
+            }
+
+            logContent.insertBefore(logEntry, logContent.firstChild);
+
+            // Keep only last 5 entries
+            while (logContent.children.length > 5) {
+                logContent.removeChild(logContent.lastChild);
+            }
+        });
+    </script>
+</body>
+
+</html>
