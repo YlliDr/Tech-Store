@@ -263,11 +263,13 @@
 .sign-in-form {
   padding: 50px 0;
   font-family: "Inter", Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .sign-in-form .container {
-  max-width: 1200px;
-  margin: auto;
+
+  display: auto;
   display: flex;
   justify-content: space-between;
   gap: 60px;
@@ -277,10 +279,16 @@
 .sign-in-form h2 {
   font-size: 40px;
   font-weight: 500;
-  margin-bottom: 25px;
+  margin:0 auto 25px;
   color: #333;
   
-  
+}
+
+.sign-in-wrapper{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* LEFT LOGIN BOX */
@@ -293,7 +301,7 @@
 .sign-in-form .form caption {
   display: block;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #333;
 }
 
@@ -301,7 +309,7 @@
 .sign-in-form input[type="password"] {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -386,9 +394,14 @@
   float:right;
 }
 
+ #SignIn{
+      transition: all 0.25s ease;
+    }
+
 .new-user button:hover {
   background: var(--default-color);
   color: white;
+  transition: all 0.25s ease;
 }
 .form a{
   float: right;
@@ -396,19 +409,80 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .sign-in-form .container{
-    display: block;
-    
-  }
-  .new-user{
-    margin-top: 30px;
-  }
-  .new-user button{
-    float: left;
-  }
-  .sign-in-form h2{
-    text-align: center;
-  }
+
+    .sign-in-wrapper .sign-in-form .container .form caption{
+      margin: 10px;
+      display: block;
+    }
+    .sign-in-form h2{
+      margin-bottom:20px ;
+    }
+
+    .sign-in-form .container{
+      max-width: 70%;
+      gap:25px; 
+    }
+
+    .new-user ul li {
+      margin-bottom: 5px;
+      font-size: 15px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .sign-in-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .sign-in-form input[type="text"],
+    .sign-in-form input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 5px 0;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .sign-in-form .form {
+      padding: 0;
+      border-right:0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sign-in-form .form a{
+      margin: 5px 0 0 0;
+    }
+
+    .sign-in-form .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;        /* center horizontally */
+        text-align: center;         /* center text */
+    }
+
+    .new-user {
+        width: 100%;
+        max-width: 400px;           /* prevent stretching too wide */
+    }
+
+    .new-user {
+        margin-top: 10px;
+    }
+
+    .new-user button {
+        width: 100%;                /* remove float and stretch full width */
+        float: none;
+    }
+
+    .sign-in-form h2 {
+        text-align: center;
+    }
 }
 /* sign up form design */
  
@@ -458,7 +532,9 @@
         transition: all 0.25s ease;
     }
 
-    #create-account:hover {
+   
+
+    #create-account:hover, #SignIn:hover, .new-user button:hover {
         background: var(--default-color);
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(24,164,70,0.25);
