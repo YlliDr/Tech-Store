@@ -8,12 +8,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
+/* KEEPING HEADER EXACTLY AS BEFORE */
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 16px; 
 }
 
 .header-top {
@@ -23,10 +24,21 @@
   padding: 0px 0;
 }
 
+.header-top a img {
+  max-width: 160px;
+  height: auto;
+  display: block;
+}
+
+.header-icons button {
+  margin-left: 8px;
+}
+
 .header-nav {
-  list-style-type: none;
-  display:flex;
+  list-style: none;
+  display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .header-nav a {
@@ -575,3 +587,76 @@
         text-decoration: none;
         font-weight: 500;
     }
+
+/* =============================================== */
+/*      "ME TE KERKUARAT" — ORIGINAL DESIGN        */
+/* =============================================== */
+
+.most-requested strong {
+  padding-left: 0px;
+}
+
+/* EXACT SAME CARD STYLE */
+.mr-card {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 3px rgba(0,0,0,0.08);
+}
+
+.mr-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.buy-btn {
+  background: white;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.buy-btn:hover {
+  background: #ddd;
+}
+
+.mr-card img {
+  max-width: 33%;
+  height: auto;
+}
+
+/* BRANDS */
+.brand-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  height: 75%;
+  padding: 17%;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.brand-box img {
+  width: 100%;
+  height: auto;
+}
+
+.brand-box p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .most-requested strong {
+    padding-left: 0px;
+  }
+}
