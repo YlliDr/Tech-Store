@@ -410,17 +410,30 @@
 /* Responsive */
 @media (max-width: 768px) {
 
-    .sign-in-wrapper .sign-in-form .container .form caption{
+    .form p{
       margin: 10px;
-      display: block;
+      text-align: start;
+      width: 100%;
     }
     .sign-in-form h2{
       margin-bottom:20px ;
     }
 
     .sign-in-form .container{
-      max-width: 70%;
-      gap:25px; 
+      max-width: 90%;
+      gap:35px; 
+    }
+
+    .new-user ul li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      padding: 0;
+      position: relative;
+      text-align: start;
+    }
+
+    .new-user h4,.new-user p{
+      text-align: start;
     }
 
     .new-user ul li {
@@ -437,7 +450,7 @@
         padding: 20px 0;
     }
 
-    .sign-in-form input[type="text"],
+    .sign-in-form input[type="text"], 
     .sign-in-form input[type="password"] {
       width: 100%;
       padding: 12px;
@@ -450,6 +463,7 @@
     .sign-in-form .form {
       padding: 0;
       border-right:0;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -457,6 +471,8 @@
 
     .sign-in-form .form a{
       margin: 5px 0 0 0;
+      width: 100%;
+      text-align: end;
     }
 
     .sign-in-form .container {
