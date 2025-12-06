@@ -20,7 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 .header-nav {
@@ -34,17 +34,52 @@
   color: #000;
 }
 
+/* icons logo style */
+.header-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
 /* Cardbox-style */
 .card{
   padding: 12px;
   border: 2px solid var(--card-border-color);
   border-radius: 4px;
+
+    height: 350px;          /* ADD THIS */
+  display: flex;          /* ADD THIS */
+  flex-direction: column; /* ADD THIS */
+  justify-content: space-between; /* ADD THIS */
+  
 }
+.card img {
+  height: 300px;      /* ADD THIS */
+  object-fit: contain; /* ADD THIS */
+  width: 100%;        /* keep it responsive */
+}
+
 .card .price{
   font-weight: bold;
 }
 .row{
   margin-bottom: 12px;
+}
+.load-content{
+  background-color: var(--default-color);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  display: block;
+  margin: 2% auto;
+  margin-bottom: 2%;
+}
+
+.load-content:hover{
+  background-color: #009245;
+
 }
 
 /* filter-group (search bar and filter)*/
@@ -330,7 +365,7 @@
 }
 
 /* green checkmark */
-.new-user ul li::before {
+.new-user ul li::before{
   content: "✔";
   color: var(--default-color);
   position: absolute;
@@ -375,3 +410,4 @@
     text-align: center;
   }
 }
+
