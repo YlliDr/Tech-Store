@@ -1,3 +1,9 @@
+:root{
+  --card-border-color: rgb(218, 218, 218);
+  --default-color: rgba(21, 175, 93);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 .header-top a img {
@@ -40,6 +46,547 @@
   color: #000;
 }
 
+/* icons logo style */
+.header-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+
+/* Cardbox-style */
+.card{
+  padding: 12px;
+  border: 2px solid var(--card-border-color);
+  border-radius: 4px;
+
+    height: 350px;          /* ADD THIS */
+  display: flex;          /* ADD THIS */
+  flex-direction: column; /* ADD THIS */
+  justify-content: space-between; /* ADD THIS */
+  
+}
+.card img {
+  height: 300px;      /* ADD THIS */
+  object-fit: contain; /* ADD THIS */
+  width: 100%;        /* keep it responsive */
+}
+
+.card .price{
+  font-weight: bold;
+}
+.row{
+  margin-bottom: 12px;
+}
+.load-content{
+  background-color: var(--default-color);
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 15px;
+  text-align: center;
+  display: block;
+  margin: 2% auto;
+  margin-bottom: 2%;
+}
+
+.load-content:hover{
+  background-color: #009245;
+
+}
+
+/* filter-group (search bar and filter)*/
+.filter-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 8px 16px;
+  min-width: 250px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  font-size: 14px;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filter input{
+  display: none;
+}
+.filter span {
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: #f3f3f3;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+.filter input:checked + span {
+    background: var(--default-color); 
+    color: white;
+   
+}
+.filter span:hover {
+    background: #e7e7e7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .filter span {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .header-nav {
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}
+
+
+/*footer Styling*/
+
+.footer {
+    background: #3a3a3a;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates as many columns as fit, each at least 250px wide, but can grow to fill available space */
+    gap: 20px 40px;
+    padding: 40px 20px;
+    align-items: start;  
+}
+
+
+.footer h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.footer p {
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.icons-row img {
+    width: 45px;
+    height: auto;
+}
+
+.icons-row i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+}
+.footer-bottom a {
+    color: #ddd;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+.icons-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.icons-row img {
+    flex-shrink: 0;
+}
+
+.footer-copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+
+/* Sign In part */
+/* Wrapper section */
+.sign-in-form {
+  padding: 50px 0;
+  font-family: "Inter", Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sign-in-form .container {
+
+  display: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Title inside your section */
+.sign-in-form h2 {
+  font-size: 40px;
+  font-weight: 500;
+  margin:0 auto 25px;
+  color: #333;
+  
+}
+
+.sign-in-wrapper{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LEFT LOGIN BOX */
+.sign-in-form .form {
+  flex: 1;
+  padding-right: 50px;
+  border-right: 1px solid #dcdcdc;
+}
+
+.sign-in-form .form caption {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.sign-in-form input[type="text"],
+.sign-in-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sign-in-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: var(--default-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sign-in-form button[type="submit"]:hover {
+  background: #009245;
+}
+
+.sign-in-form .form a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--default-color);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.sign-in-form .form a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT NEW USER BOX */
+.new-user {
+  flex: 0.8;
+}
+
+.new-user h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.new-user p {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.new-user ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+
+.new-user ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+/* green checkmark */
+.new-user ul li::before{
+  content: "✔";
+  color: var(--default-color);
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  top: -1px;
+}
+
+/* Register button */
+.new-user button {
+  background: #fff;
+  color: var(--default-color);
+  padding: 10px 25px;
+  border: 2px solid var(--default-color);
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  float:right;
+}
+
+ #SignIn{
+      transition: all 0.25s ease;
+    }
+
+.new-user button:hover {
+  background: var(--default-color);
+  color: white;
+  transition: all 0.25s ease;
+}
+.form a{
+  float: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .form p{
+      margin: 10px;
+      text-align: start;
+      width: 100%;
+    }
+    .sign-in-form h2{
+      margin-bottom:20px ;
+    }
+
+    .sign-in-form .container{
+      max-width: 90%;
+      gap:35px; 
+    }
+
+    .new-user ul li {
+      margin-bottom: 10px;
+      font-size: 15px;
+      padding: 0;
+      position: relative;
+      text-align: start;
+    }
+
+    .new-user h4,.new-user p{
+      text-align: start;
+    }
+
+    .new-user ul li {
+      margin-bottom: 5px;
+      font-size: 15px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .sign-in-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .sign-in-form input[type="text"], 
+    .sign-in-form input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 5px 0;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .sign-in-form .form {
+      padding: 0;
+      border-right:0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sign-in-form .form a{
+      margin: 5px 0 0 0;
+      width: 100%;
+      text-align: end;
+    }
+
+    .sign-in-form .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;        /* center horizontally */
+        text-align: center;         /* center text */
+    }
+
+    .new-user {
+        width: 100%;
+        max-width: 400px;           /* prevent stretching too wide */
+    }
+
+    .new-user {
+        margin-top: 10px;
+    }
+
+    .new-user button {
+        width: 100%;                /* remove float and stretch full width */
+        float: none;
+    }
+
+    .sign-in-form h2 {
+        text-align: center;
+    }
+}
+/* sign up form design */
+ 
+    .signup-card {
+        max-width: 420px;
+        margin:0 auto;
+        padding: 40px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+        animation: fadeUp 0.6s ease;
+        
+    }
+    #wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+  }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-control {
+        height: 52px;
+        border-radius: 12px;
+        border: 1px solid #dcdcdc;
+        transition: all 0.2s ease;
+    }
+
+    .form-control:focus {
+        border-color: #1db954;
+        box-shadow: 0 0 0 4px rgba(29,185,84,0.15);
+    }
+
+    #create-account {
+        background: #1db954;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        height: 52px;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: all 0.25s ease;
+    }
+
+   
+
+    #create-account:hover, #SignIn:hover, .new-user button:hover {
+        background: var(--default-color);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(24,164,70,0.25);
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sub {
+        text-align: center;
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .link-custom {
+        color: black;
+        text-decoration: none;
+        font-weight: 500;
+    }
 
 /* =============================================== */
 /*      "ME TE KERKUARAT" — ORIGINAL DESIGN        */
