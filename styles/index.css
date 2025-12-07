@@ -26,20 +26,20 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 120px;
-  display: none; /* hidden by default */
+  display: none;
   z-index: 100;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.2s ease;
+  pointer-events: auto; /* makes it clickable */
 }
 
-/* Show on hover */
-.header-icons:hover .profile-menu,
 .profile-menu.active {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
+
 
 /* ================= BUTTONS INSIDE DROPDOWN ================= */
 .profile-menu .btn {
@@ -770,7 +770,7 @@ section .filter-group{
       border-radius: 50%;
       background: white;
       cursor: pointer;
-      padding: 5px 0 0 0;
+      padding: 7px 0 0 0;
       box-shadow: 0 3px 12px rgba(0,0,0,0.15);
       transition: background 0.35s, box-shadow 0.25s;
       z-index: 9999;
