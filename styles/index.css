@@ -724,8 +724,9 @@ section .filter-group{
 }
 
 .buy-btn {
-  background: white;
-  border: none;
+  background: var(--default-color);
+  color: white;
+  border: 1px solid var(--default-color);
   padding: 7px 18px;
   border-radius: 25px;
   cursor: pointer;
@@ -734,7 +735,9 @@ section .filter-group{
 }
 
 .buy-btn:hover {
-  background: #ddd;
+  background: white;
+  color: var(--default-color);
+  border: 1px solid var(--default-color);
 }
 
 .mr-card img {
