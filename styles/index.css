@@ -754,7 +754,13 @@ section .filter-group{
   padding: 17%;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  transition: 0.2s ease;
+}
+
+.brand-box:hover {
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  transform: translateY(-3px);
 }
 
 .brand-box img {
