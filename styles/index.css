@@ -10,13 +10,45 @@
   box-sizing: border-box;
 }
 
-/* ================= HEADER ICONS ================= */
+/* Header Icons*/
 .header-icons {
   position: relative;
   display: inline-block;
 }
 
-/* ================= DROPDOWN MENU ================= */
+
+.header-icons a i.fa-cart-shopping {
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.header-icons a i.fa-cart-shopping:hover {
+  transform: translateY(-3px);
+  color: var(--default-color);
+}
+
+/* Dropdown menu  */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+}
+
+#profile-btn {
+  cursor: pointer; 
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+#profile-btn:hover {
+  transform: translateY(-3px); 
+  color: var(--default-color);
+}
+
+
 .profile-menu {
   position: absolute;
   top: 40px;
@@ -31,7 +63,7 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.2s ease;
-  pointer-events: auto; /* makes it clickable */
+  pointer-events: auto
 }
 
 .profile-menu.active {
@@ -40,8 +72,7 @@
   transform: translateY(0);
 }
 
-
-/* ================= BUTTONS INSIDE DROPDOWN ================= */
+/* Buttons in dropdown */
 .profile-menu .btn {
   display: block;
   text-decoration: none;
@@ -61,6 +92,7 @@
   border: 1px solid var(--default-color);
   cursor: pointer;
 }
+
 
 .container {
   max-width: 1200px;
@@ -783,6 +815,7 @@ section .filter-group{
   .arrowInside {
       color: var(--default-color);
       font-size: 26px;
+      width: 50px;
       font-weight: bold;
       transition: color 0.35s, transform 0.3s;
   }
