@@ -10,7 +10,58 @@
   box-sizing: border-box;
 }
 
-/* KEEPING HEADER EXACTLY AS BEFORE */
+/* ================= HEADER ICONS ================= */
+.header-icons {
+  position: relative;
+  display: inline-block;
+}
+
+/* ================= DROPDOWN MENU ================= */
+.profile-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 120px;
+  display: none; /* hidden by default */
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+}
+
+/* Show on hover */
+.header-icons:hover .profile-menu,
+.profile-menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= BUTTONS INSIDE DROPDOWN ================= */
+.profile-menu .btn {
+  display: block;
+  text-decoration: none;
+  background: var(--default-color);
+  color: white;
+  margin: 5px 0;
+  padding: 6px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.profile-menu .btn:hover {
+  background: white;
+  color: var(--default-color);
+  border: 1px solid var(--default-color);
+  cursor: pointer;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -28,6 +79,14 @@
   max-width: 160px;
   height: auto;
   display: block;
+}
+
+.header-top a {
+  text-decoration: none;
+  color: inherit;
+}
+.header-top a:hover {
+  text-decoration: none;
 }
 
 .header-icons button {
@@ -53,22 +112,26 @@
   font-size: 20px;
 }
 
+  .card.hidden{
+    display: none;
+  }
+
 /* Cardbox-style */
 .card{
   padding: 12px;
   border: 2px solid var(--card-border-color);
   border-radius: 4px;
 
-    height: 350px;          /* ADD THIS */
-  display: flex;          /* ADD THIS */
-  flex-direction: column; /* ADD THIS */
-  justify-content: space-between; /* ADD THIS */
+    height: 350px;          
+  display: flex;          
+  flex-direction: column; 
+  justify-content: space-between; 
   
 }
 .card img {
-  height: 300px;      /* ADD THIS */
-  object-fit: contain; /* ADD THIS */
-  width: 100%;        /* keep it responsive */
+  height: 300px;      
+  object-fit: contain; 
+  width: 100%;        
 }
 
 .card .price{
