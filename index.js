@@ -1,4 +1,3 @@
-
 // Login dropdown
       const profileBtn = document.getElementById("profile-btn");
       const profileMenu = document.getElementById("profile-menu");
@@ -31,11 +30,23 @@
       }
     });
 
-  // Anchor link
+    // Anchor button
 
-    document.getElementById("scrollToTopBtn").addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 600) {
+            scrollBtn.classList.add("visible");
+        } else {
+            scrollBtn.classList.remove("visible");
+        }
+    });
+
+
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
         });
+    });

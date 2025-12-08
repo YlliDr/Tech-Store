@@ -790,45 +790,65 @@ section .filter-group{
   transition: 0.2s ease;
 }
 
+/* Base style */
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: var(--default-color);
+    cursor: pointer;
+    padding: 7px 0 0 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    transition: 
+        background 0.35s,
+        box-shadow 0.25s,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    z-index: 9999;
 
-/* Anchor link */
-  .scrollToTopBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 52px;
-      height: 52px;
-      border: none;
-      border-radius: 50%;
-      background: white;
-      cursor: pointer;
-      padding: 7px 0 0 0;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-      transition: background 0.35s, box-shadow 0.25s;
-      z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
 
-  .arrowInside {
-      color: var(--default-color);
-      font-size: 26px;
-      width: 50px;
-      font-weight: bold;
-      transition: color 0.35s, transform 0.3s;
-  }
+.scrollToTopBtn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
 
-  .scrollToTopBtn:hover {
-      background: var(--default-color);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  }
+.arrowInside {
+    color: white;
+    font-size: 26px;
+    width: 50px;
+    font-weight: bold;
+    transition: color 0.35s, transform 0.3s;
+}
 
-  .scrollToTopBtn:hover .arrowInside {
-      color: white;
-      transform: translateY(-4px);
-  }
+.scrollToTopBtn:hover {
+    background: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.scrollToTopBtn:hover .arrowInside {
+    color: var(--default-color);
+    transform: translateY(-4px);
+}
+
+@media (max-width: 1024px) {
+    .scrollToTopBtn {
+        display: none !important;
+    }
+}
+
 
 
 .brand-box:hover {
