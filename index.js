@@ -1,8 +1,3 @@
-
-
-
-
-
 // Login dropdown
       const profileBtn = document.getElementById("profile-btn");
       const profileMenu = document.getElementById("profile-menu");

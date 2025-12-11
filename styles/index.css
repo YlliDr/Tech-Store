@@ -39,7 +39,7 @@
 
 #profile-btn {
   cursor: pointer; 
-  display: inline-block;
+  display: block;
   transition: all 0.2s ease;
 }
 
@@ -58,7 +58,10 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 120px;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
   z-index: 100;
   opacity: 0;
   transform: translateY(-10px);
@@ -67,7 +70,7 @@
 }
 
 .profile-menu.active {
-  display: block;
+  display: flex;
   opacity: 1;
   transform: translateY(0);
 }
@@ -75,9 +78,10 @@
 /* Buttons in dropdown */
 .profile-menu .btn {
   display: block;
+  width: 80%;
   text-decoration: none;
   background: var(--default-color);
-  color: white;
+  color: white; 
   margin: 5px 0;
   padding: 6px;
   text-align: center;
@@ -850,8 +854,6 @@ section .filter-group{
         display: none !important;
     }
 }
-
-
 
 .brand-box:hover {
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
