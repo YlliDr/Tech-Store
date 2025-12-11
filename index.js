@@ -1,3 +1,8 @@
+
+
+
+
+
 // Login dropdown
       const profileBtn = document.getElementById("profile-btn");
       const profileMenu = document.getElementById("profile-menu");
@@ -50,3 +55,38 @@
             behavior: "smooth"
         });
     });
+
+    // Checking login status
+    document.addEventListener("DOMContentLoaded", function() {
+    const loginBtn = document.getElementById("login-btn");
+    const signupBtn = document.getElementById("signup-btn");
+    const logoutBtn = document.getElementById("logout-btn");
+
+    // Check if user is logged in
+    const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+
+    if(currentUser) {
+        // Hide login/signup
+        loginBtn.style.display = "none";
+        signupBtn.style.display = "none";
+
+        // Show logout
+        logoutBtn.style.display = "inline-block";
+
+        // Optional: show user's name in the header
+        const profileBtn = document.getElementById("profile-btn");
+        profileBtn.title = `Logged in as ${currentUser.fullName}`;
+    } else {
+        // User not logged in
+        loginBtn.style.display = "inline-block";
+        signupBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+    }
+
+    // Logout functionality
+    logoutBtn.addEventListener("click", function() {
+        sessionStorage.removeItem("currentUser");
+        location.reload(); // refresh page to update header
+    });
+});
+
