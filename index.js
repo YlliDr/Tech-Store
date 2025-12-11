@@ -41,7 +41,7 @@
 
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 600) {
+        if (window.scrollY > 150) {
             scrollBtn.classList.add("visible");
         } else {
             scrollBtn.classList.remove("visible");
