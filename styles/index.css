@@ -153,8 +153,7 @@
   padding: 12px;
   border: 2px solid var(--card-border-color);
   border-radius: 4px;
-
-    height: 350px;          
+  height: 500px;          
   display: flex;          
   flex-direction: column; 
   justify-content: space-between; 
@@ -169,7 +168,10 @@
 .card .price{
   font-weight: bold;
 }
-
+.prod-desc {
+  height: 60px; 
+  overflow: hidden;
+}
 
 
 .card-btn {

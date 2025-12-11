@@ -1,92 +1,111 @@
-
-
-
-
-
 // Login dropdown
-      const profileBtn = document.getElementById("profile-btn");
-      const profileMenu = document.getElementById("profile-menu");
+const profileBtn = document.getElementById("profile-btn");
+const profileMenu = document.getElementById("profile-menu");
 
-
-      profileBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        profileMenu.classList.toggle("active");
-      });
-
-
-      document.addEventListener("click", (e) => {
-        if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
-          profileMenu.classList.remove("active");
-        }
-      });
-
-    const btn = document.getElementById("toggleVisibility");
-    const hiddenCards = document.querySelectorAll(".card.hidden");
-
-  // Show more products feature
-
-    btn.addEventListener("click", () => {
-      hiddenCards.forEach(card => card.classList.toggle("hidden"));
-
-      if (btn.textContent === "Show more") {
-        btn.textContent = "Show less";
-      } else {
-        btn.textContent = "Show more";
-      }
-    });
-
-    // Anchor button
-
-    const scrollBtn = document.getElementById("scrollToTopBtn");
-
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 150) {
-            scrollBtn.classList.add("visible");
-        } else {
-            scrollBtn.classList.remove("visible");
-        }
-    });
-
-
-    scrollBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    // Checking login status
-    document.addEventListener("DOMContentLoaded", function() {
-    const loginBtn = document.getElementById("login-btn");
-    const signupBtn = document.getElementById("signup-btn");
-    const logoutBtn = document.getElementById("logout-btn");
-
-    // Check if user is logged in
-    const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-
-    if(currentUser) {
-        // Hide login/signup
-        loginBtn.style.display = "none";
-        signupBtn.style.display = "none";
-
-        // Show logout
-        logoutBtn.style.display = "inline-block";
-
-        // Optional: show user's name in the header
-        const profileBtn = document.getElementById("profile-btn");
-        profileBtn.title = `Logged in as ${currentUser.fullName}`;
-    } else {
-        // User not logged in
-        loginBtn.style.display = "inline-block";
-        signupBtn.style.display = "inline-block";
-        logoutBtn.style.display = "none";
-    }
-
-    // Logout functionality
-    logoutBtn.addEventListener("click", function() {
-        sessionStorage.removeItem("currentUser");
-        location.reload(); // refresh page to update header
-    });
+profileBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  profileMenu.classList.toggle("active");
 });
 
+document.addEventListener("click", (e) => {
+  if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+    profileMenu.classList.remove("active");
+  }
+});
+
+
+// Checking login status
+document.addEventListener("DOMContentLoaded", function() {
+  const loginBtn = document.getElementById("login-btn");
+  const signupBtn = document.getElementById("signup-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+
+  const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+
+  if(currentUser) {
+      loginBtn.style.display = "none";
+      signupBtn.style.display = "none";
+      logoutBtn.style.display = "inline-block";
+
+      const profileBtn = document.getElementById("profile-btn");
+      profileBtn.title = `Logged in as ${currentUser.fullName}`;
+  } else {
+      loginBtn.style.display = "inline-block";
+      signupBtn.style.display = "inline-block";
+      logoutBtn.style.display = "none";
+  }
+
+  logoutBtn.addEventListener("click", function() {
+      sessionStorage.removeItem("currentUser");
+      location.reload();
+  });
+});
+
+
+// GENERATING CARDS
+const products = [
+  { img: "images/card-1.jpeg", desc: "Soft cotton hoodie with relaxed fit.", price: 35 },
+  { img: "images/card-2.jpeg", desc: "Minimalist beige sneakers for everyday wear.", price: 35 },
+  { img: "images/card-3.jpeg", desc: "Classic black t-shirt with premium fabric.", price: 35 },
+  { img: "images/card-4.jpeg", desc: "Lightweight jacket perfect for spring.", price: 35 },
+
+  // Duplicate row
+  { img: "images/card-1.jpeg", desc: "Soft cotton hoodie with relaxed fit.", price: 35 },
+  { img: "images/card-2.jpeg", desc: "Minimalist beige sneakers for everyday wear.", price: 35 },
+  { img: "images/card-3.jpeg", desc: "Classic black t-shirt with premium fabric.", price: 35 },
+  { img: "images/card-4.jpeg", desc: "Lightweight jacket perfect for spring.", price: 35 },
+
+  // Hidden row
+  { img: "images/card-5.jpeg", desc: "Warm flannel shirt with modern styling.", price: 35, hidden: true },
+  { img: "images/card-6.jpeg", desc: "Breathable running shoes with soft cushioning.", price: 35, hidden: true },
+  { img: "images/card-7.jpeg", desc: "Stylish wool beanie for cold days.", price: 35, hidden: true },
+  { img: "images/card-1.jpeg", desc: "Soft cotton hoodie with relaxed fit.", price: 35, hidden: true }
+];
+
+const productRows = document.getElementById("productRows");
+let html = "";
+
+products.forEach((p, i) => {
+  if (i % 4 === 0) html += `<div class="row g-2">`;
+
+  html += `
+    <div class="col-6 col-sm-12 col-md-6 col-lg-3">
+      <div class="card ${p.hidden ? "hidden" : ""}">
+        <img src="${p.img}" alt="Product image">
+        <p class="prod-desc">${p.desc}</p>
+        <p class="price">$${p.price}</p>
+        <button id="addToCart" class="card-btn">
+          <i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add to Cart
+        </button>
+      </div>
+    </div>
+  `;
+
+  if (i % 4 === 3) html += `</div>`;
+});
+
+productRows.innerHTML = html;
+
+
+// SHOW MORE / SHOW LESS 
+const btn = document.getElementById("toggleVisibility");
+const hiddenCards = document.querySelectorAll(".card.hidden");
+
+btn.addEventListener("click", () => {
+  hiddenCards.forEach(card => card.classList.toggle("hidden"));
+
+  btn.textContent =
+    btn.textContent === "Show more" ? "Show less" : "Show more";
+});
+
+
+// SCROLL TO TOP
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener("scroll", () => {
+  scrollBtn.classList.toggle("visible", window.scrollY > 150);
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
