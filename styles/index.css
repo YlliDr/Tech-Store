@@ -167,7 +167,7 @@
   height: 300px;      
   object-fit: contain; 
   width: 100%;        
-}
+} 
 
 .card .price{
   font-weight: bold;
@@ -402,7 +402,7 @@
 /* Sign In part */
 .logo_sign-in {
   width: 120px;
-  height: auto;
+  height: 120px;
 }
 
 a {
@@ -496,12 +496,14 @@ a {
 
 .new-user h4 {
   font-size: 24px;
+    text-align: start;
   margin-bottom: 10px;
   color: #333;
 }
 
 .new-user p {
   color: #444;
+    text-align: start;
   margin-bottom: 15px;
 }
 
@@ -514,12 +516,13 @@ a {
 .new-user ul li {
   margin-bottom: 10px;
   font-size: 15px;
+  text-align: start;
   padding-left: 25px;
   position: relative;
 }
 
-/* GREEN CHECKMARK */
-.new-user ul li::before {
+/* green checkmark */
+.new-user ul li::before{
   content: "✔";
   color: var(--default-color);
   position: absolute;
