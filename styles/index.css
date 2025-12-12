@@ -174,7 +174,7 @@
 }
 .prod-desc {
   height: 60px; 
-  overflow: hidden;
+  overflow: auto;
 }
 
 
