@@ -418,6 +418,13 @@
 }
 
 
+@media (max-width: 768px){
+  .footer-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
 
 
 /*ME TE KERKUARAT*/
