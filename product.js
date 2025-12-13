@@ -5,7 +5,7 @@ const products = [
     img: "images/card-1.jpeg",
     title: "Apple iPhone 17 Pro Max",
     price: 1699.5,
-    desc: "Smartfon flagship i Apple me performancë maksimale dhe kamera profesionale.",
+    desc: "Smartphone flagship i Apple me performancë maksimale dhe kamera profesionale.",
     specs: [
       "256GB Storage",
       "A18 Bionic",
@@ -569,10 +569,10 @@ if (!product) {
   container.innerHTML = "<h2>Product not found</h2>";
 } else {
     let stockQty;
-    if (product.price < 50) stockQty = 120;
-    else if (product.price < 150) stockQty = 60;
-    else if (product.price < 500) stockQty = 25;
-    else stockQty = 8;
+    if (product.price < 50) stockQty = 120+ Math.round(Math.random()*40);
+    else if (product.price < 150) stockQty = 60 + Math.round(Math.random()*30);
+    else if (product.price < 500) stockQty = 25 + Math.round(Math.random()*10);
+    else stockQty = 8 + Math.round(Math.random()*3);
 
 const stockText =
   stockQty > 20 ? "In stock" :

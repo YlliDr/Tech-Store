@@ -50,6 +50,18 @@
   color: var(--default-color);
 }
 
+.header-icons a i.fa-solid {
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.header-icons a i.fa-solid:hover {
+  transform: translateY(-3px);
+  color: var(--default-color);
+}
+
+
 
 #profile-btn span {
   font-size: 0.9rem;
