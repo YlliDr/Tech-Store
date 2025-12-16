@@ -202,10 +202,19 @@
 .card .price{
   font-weight: bold;
 }
+
+
 .prod-desc {
-  height: 60px; 
-  overflow: auto;
+  height: 50px;  
+  line-height: 25px; 
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
+
+
 
 
 .card-btn {
