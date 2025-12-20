@@ -599,6 +599,11 @@ const stockText =
             Specifications
           </button>
         </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#video">
+            About
+          </button>
+        </li>
       </ul>
 
       <div class="tab-content product-tab-content">
@@ -633,7 +638,16 @@ const stockText =
                   .join("")}
               </tbody>
             </table>
+        </div>
+
+        <div class="tab-pane fade" id="video">
+          <div class="ratio ratio-16x9">
+            <video controls poster="images/unboxing.jpg">
+              <source src="videos/unboxing.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
+        </div>
 
 
       </div>
