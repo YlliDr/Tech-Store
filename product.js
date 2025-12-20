@@ -617,10 +617,25 @@ const stockText =
         </div>
 
         <div class="tab-pane fade" id="specs">
-          <ul>
-            ${product.specs.map(s => `<li>${s}</li>`).join("")}
-          </ul>
-        </div>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Specification</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${product.specs
+                  .map(spec => `
+                    <tr>
+                      <td>${spec}</td>
+                    </tr>
+                  `)
+                  .join("")}
+              </tbody>
+            </table>
+          </div>
+
+
       </div>
     </div>
 
