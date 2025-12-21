@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     list.slice(0, visibleCount).forEach((p, index) => {
       html += `
         <div class="col-6 col-sm-12 col-md-6 col-lg-3 mb-3">
-          <div class="card" onclick="goToProduct(${p.id})" style="cursor: pointer;">
+          <div class="card product-card" data-id="${p.id}" style="cursor:pointer;">
             <img src="${p.img}" alt="Product image">
             <p class="prod-desc">${p.desc}</p>
           <div class="price-rating">
@@ -109,6 +109,18 @@ document.addEventListener("DOMContentLoaded", () => {
         visibleCount >= list.length ? "none" : "block";
     }
   }
+
+  productRows.addEventListener("click", (e) => {
+  const card = e.target.closest(".product-card");
+  if (!card) return;
+
+  // ignore Add to Cart button clicks
+  if (e.target.closest(".card-btn")) return;
+
+  const id = Number(card.dataset.id);
+  window.location.href = `product.html?id=${id}`;
+});
+
 
   // ===================== FILTERING =====================
   function applyFilters() {
@@ -196,12 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===================== PRODUCT PAGE =====================
-  function goToProduct(id) {
-  const product = products.find(p => p.id === id);
-  window.location.href =
-    `product.html?id=${product.id}&rating=${product.rating}`;
-}
+
 
 
   // ===================== INITIAL RENDER =====================
