@@ -203,6 +203,31 @@
   font-weight: bold;
 }
 
+.price-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.price {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star {
+  color: gold;
+  font-size: 16px;
+}
+
+
+
 
 .prod-desc {
   height: 50px;  

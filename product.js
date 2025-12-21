@@ -1,7 +1,7 @@
 const products = [
-
-
     {
+    id:0,
+    rating:3.0, 
     img: "images/card-1.jpeg",
     title: "Apple iPhone 17 Pro Max",
     price: 1699.5,
@@ -21,6 +21,7 @@ const products = [
 
 
     {
+    id:1,
     img: "images/card-2.jpeg",
     title: "Gigabyte GeForce GT 710",
     price: 82.5,
@@ -39,6 +40,7 @@ const products = [
 
 
     {
+    id:1,
     img: "images/card-3.jpeg",
     title: "Blow BT460 Bluetooth Speaker",
     price: 29.5,
@@ -57,6 +59,7 @@ const products = [
 
 
     {
+    id:2,
     img: "images/card-4.jpeg",
     title: "Samsung Galaxy Tab A9+ LTE",
     price: 249.5,
@@ -75,6 +78,7 @@ const products = [
 
 
     {
+    id:3,
     img: "images/card-5.jpeg",
     title: "Tastierë Redragon K606 Lakshmi Red",
     price: 37.5,
@@ -92,6 +96,7 @@ const products = [
 
 
     {
+    id:4,
     img: "images/card-6.jpeg",
     title: "MediaTech ZONE MT1258 Mechanical Keyboard",
     price: 31.5,
@@ -109,6 +114,7 @@ const products = [
 
 
     {
+    id:5,
     img: "images/card-7.jpeg",
     title: "Grundig 65GIQ8950B QLED TV",
     price: 35,
@@ -126,6 +132,7 @@ const products = [
 
 
     {
+    id:6,
     img: "images/card-8.webp",
     title: "Lenovo B210 Laptop Backpack",
     price: 19.5,
@@ -143,6 +150,7 @@ const products = [
 
 
     {
+    id:7,
     img: "images/card-9.webp",
     title: "Iso Trade XXL Mousepad",
     price: 9.5,
@@ -160,6 +168,7 @@ const products = [
 
 
     {
+    id:8,
     img: "images/card-10.webp",
     title: "SENSE7 Spellcaster Gaming Chair",
     price: 119.5,
@@ -557,16 +566,19 @@ const products = [
 
 // get product id from URL
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const id = parseInt(params.get("id"), 10);
 
-
-const product = products[id];
+const product = products.find(p => p.id === id);
 const container = document.getElementById("productDetails");
+
+const rating = params.get("rating");
+
 
 
 
 if (!product) {
   container.innerHTML = "<h2>Product not found</h2>";
+  throw new Error("Product not found");
 } else {
     let stockQty;
     if (product.price < 50) stockQty = 120+ Math.round(Math.random()*40);
@@ -606,42 +618,33 @@ const stockText =
           <p>${product.desc}</p>
           <p>
             This product is designed to meet modern user needs, combining
-            performance, durability, and elegant design. Ideal for both
-            professional and everyday use, it offers reliable operation,
-            optimized efficiency, and long-term value.
-          </p>
-          <p>
-            Carefully selected materials and advanced technology ensure
-            consistent performance even under intensive usage.
+            performance, durability, and elegant design.
           </p>
         </div>
 
         <div class="tab-pane fade" id="specs">
-            <table class="table table-bordered table-striped">
-              <thead>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${product.specs.map(spec => `
                 <tr>
-                  <th>Specification</th>
+                  <td>${spec}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${product.specs
-                  .map(spec => `
-                    <tr>
-                      <td>${spec}</td>
-                    </tr>
-                  `)
-                  .join("")}
-              </tbody>
-            </table>
-          </div>
-
-
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <!-- RIGHT -->
     <div class="col-md-6">
       <div class="buy-box">
+
         <div class="d-flex justify-content-between align-items-start">
           <h2>${product.title}</h2>
           <button class="wishlist" title="Add to wishlist">
@@ -649,12 +652,26 @@ const stockText =
           </button>
         </div>
 
-        <p class="price">$${product.price}</p>
-        <p class="small fw-semibold">
-          Availability: <span class="${stockQty > 20 ? "text-success" : "text-warning"}">
-            ${stockText} (${stockQty} pcs)
-          </span>
-        </p>
+        <!-- PRICE + RATING -->
+        <div class="mb-3">
+  <div class="d-flex justify-content-between align-items-center">
+    <p class="price mb-0" id="productPrice"></p>
+
+    <div class="product-rating">
+      <span class="star">★</span>
+      <span id="productRating"></span>
+    </div>
+  </div>
+
+  <p class="small fw-semibold mt-1">
+    Availability:
+    <span class="${stockQty > 20 ? "text-success" : "text-warning"}">
+      ${stockText} (${stockQty} pcs)
+    </span>
+  </p>
+</div>
+
+
 
         <!-- COLOR -->
         <div class="option-group mb-3">
@@ -684,6 +701,7 @@ const stockText =
           <i class="fas fa-shield-halved"></i> Official warranty<br>
           <i class="fas fa-rotate-left"></i> 14-day return policy
         </div>
+
       </div>
     </div>
 
