@@ -61,22 +61,4 @@ function clearErrors() {
 }
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const cart = JSON.parse(localStorage.getItem("checkoutCart")) || [];
 
-//   if (cart.length === 0) {
-//     alert("No items to pay for.");
-//     window.location.href = "index.html";
-//     return;
-//   }
-
-//   let total = 0;
-//   cart.forEach(item => {
-//     total += item.price * item.qty;
-//   });
-
-//   console.log("Items being paid for:", cart);
-//   console.log("Total:", total.toFixed(2));
-
-//   // Render summary if you want
-// });

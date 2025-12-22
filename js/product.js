@@ -22,6 +22,7 @@ const products = [
 
     {
     id:1,
+    rating:3.6, 
     img: "images/card-2.jpeg",
     title: "Gigabyte GeForce GT 710",
     price: 82.5,
@@ -41,6 +42,7 @@ const products = [
 
     {
     id:2,
+    rating:4.2, 
     img: "images/card-3.jpeg",
     title: "Blow BT460 Bluetooth Speaker",
     price: 29.5,
@@ -60,6 +62,7 @@ const products = [
 
     {
     id:3,
+    rating:2.3, 
     img: "images/card-4.jpeg",
     title: "Samsung Galaxy Tab A9+ LTE",
     price: 249.5,
@@ -79,6 +82,7 @@ const products = [
 
     {
     id:4,
+    rating:4.9, 
     img: "images/card-5.jpeg",
     title: "Tastierë Redragon K606 Lakshmi Red",
     price: 37.5,
@@ -97,6 +101,7 @@ const products = [
 
     {
     id:5,
+    rating:4.4, 
     img: "images/card-6.jpeg",
     title: "MediaTech ZONE MT1258 Mechanical Keyboard",
     price: 31.5,
@@ -115,6 +120,7 @@ const products = [
 
     {
     id:6,
+    rating:4.3, 
     img: "images/card-7.jpeg",
     title: "Grundig 65GIQ8950B QLED TV",
     price: 35,
@@ -133,6 +139,7 @@ const products = [
 
     {
     id:7,
+    rating:4.8, 
     img: "images/card-8.webp",
     title: "Lenovo B210 Laptop Backpack",
     price: 19.5,
@@ -151,6 +158,7 @@ const products = [
 
     {
     id:8,
+    rating:4.3, 
     img: "images/card-9.webp",
     title: "Iso Trade XXL Mousepad",
     price: 9.5,
@@ -169,6 +177,7 @@ const products = [
 
     {
     id:9,
+    rating:4.4, 
     img: "images/card-10.webp",
     title: "SENSE7 Spellcaster Gaming Chair",
     price: 119.5,
@@ -186,7 +195,8 @@ const products = [
 
 
     {
-    id:10,  
+    id:10, 
+    rating:2.8,  
     img: "images/card-11.webp",
     title: "SENSE7 Classic Desk",
     price: 99.5,
@@ -205,6 +215,7 @@ const products = [
 
     {
     id:11,  
+    rating:2.4, 
     img: "images/card-12.webp",
     title: "Lenovo LOQ Gaming Laptop",
     price: 689.5,
@@ -223,7 +234,8 @@ const products = [
   
 
     {
-    id:12,  
+    id:12, 
+    rating:1.8,  
     img: "images/card-13.webp",
     title: "Logitech MK470 Wireless Combo",
     price: 79.5,
@@ -242,6 +254,7 @@ const products = [
 
     {
     id:13,  
+    rating:4.7, 
     img: "images/card-14.webp",
     title: "Lenovo Legion T5 Gaming PC",
     price: 879.5,
@@ -260,6 +273,7 @@ const products = [
 
     {
     id:14,
+    rating:4.7, 
     img: "images/card-15.webp",
     title: "Xiaomi Robot Vacuum S20",
     price: 169.5,
@@ -278,6 +292,7 @@ const products = [
 
     {
     id:15,
+    rating:3.6, 
     img: "images/card-16.webp",
     title: "HP 27\" Monitor Series",
     price: 179.5,
@@ -296,6 +311,7 @@ const products = [
 
     {
     id:16,
+    rating:5.0, 
     img: "images/card-17.webp",
     title: "AMD Ryzen 7 9800X3D",
     price: 449.5,
@@ -314,6 +330,7 @@ const products = [
 
     {
     id:17,
+    rating:4.0, 
     img: "images/card-18.webp",
     title: "Nintendo Switch 2 + Mario Kart World",
     price: 569.5,
@@ -350,6 +367,7 @@ const products = [
 
     {
     id:19,
+    rating:3.5, 
     img: "images/card-20.webp",
     title: "Samsung Galaxy S25 Ultra",
     price: 3766.5,
@@ -368,6 +386,7 @@ const products = [
 
     {
     id:20,
+    rating:2.8, 
     img: "images/card-21.webp",
     title: "Kysona Jupiter Ultra Mouse",
     price: 59.5,
@@ -386,6 +405,7 @@ const products = [
 
     {
     id:21,
+    rating:3.0, 
     img: "images/card-22.webp",
     title: "Dunlop 6/12V Battery Charger",
     price: 53.5,
@@ -403,6 +423,7 @@ const products = [
 
     {
     id:22,  
+    rating:3.9, 
     img: "images/card-23.webp",
     title: "MSI Titan 18 HX",
     price: 5289.5,
@@ -422,6 +443,7 @@ const products = [
 
     {
     id:23,
+    rating:4.6, 
     img: "images/card-24.webp",
     title: "HyperX Cloud III Headset",
     price: 89.5,
@@ -439,6 +461,7 @@ const products = [
 
     {
     id:24,
+    rating:4.3, 
     img: "images/card-25.webp",
     title: "Apple iPhone 17 Pro Max Clear Case",
     price: 69.5,
@@ -457,6 +480,7 @@ const products = [
 
     {
     id:25,
+    rating:3.2, 
     img: "images/card-26.webp",
     title: "SENSE7 Spellcaster FUKU XL Chair",
     price: 149.5,
@@ -475,6 +499,7 @@ const products = [
 
     {
     id:26,
+    rating:4.5, 
     img: "images/card-27.webp",
     title: "Apple MacBook Air 13.6\" M2",
     price: 1199.5,
@@ -494,6 +519,7 @@ const products = [
 
     {
     id:27,
+    rating:3.7, 
     img: "images/card-28.webp",
     title: "muPAD L10 Tablet",
     price: 49.5,
@@ -513,6 +539,7 @@ const products = [
         
     {
     id:28,
+    rating:4.7, 
     img: "images/card-29.webp",
     title: "Krux Space Carpet MAX Mousepad",
     price: 29.5,
@@ -531,6 +558,7 @@ const products = [
 
     {
     id:29,  
+    rating:4.4, 
     img: "images/card-30.webp",
     title: "Philips XB2125/09 Vacuum Cleaner",
     price: 149.9,
@@ -549,6 +577,7 @@ const products = [
 
     {
     id:30,  
+    rating:3.8, 
     img: "images/card-31.webp",
     title: "Apple AirPods Pro (3rd Gen)",
     price: 299.5,
@@ -567,6 +596,7 @@ const products = [
 
     {
     id:31,
+    rating:2.9, 
     img: "images/card-32.webp",
     title: "Samsung Galaxy A56 5G",
     price: 359.5,

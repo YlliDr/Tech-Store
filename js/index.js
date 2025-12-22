@@ -1,52 +1,3 @@
-// GENERATING CARDS
-const products = [
-  { id:0, img: "images/card-1.jpeg", desc: "Apple iPhone 17 Pro Max, 256GB, Cosmic Orange", price: 1699.50, rating: 4.8 },
-  { id:1, img: "images/card-2.jpeg", desc: "Kartelë grafike Gigabyte GeForce GT 710, 2GB DDR3", price: 82.50, rating: 3.2 },
-  { id:2, img: "images/card-3.jpeg", desc: "Altoparlant Blow BT460, hirtë", price: 29.50, rating: 3.9 },
-  { id:3, img: "images/card-4.jpeg", desc: "Tablet Samsung Galaxy Tab A9+ LTE X216, 6/128, i hirtë", price: 249.50, rating: 4.3 },
-
-  { id:4, img: "images/card-5.jpeg", desc: "Tablet Samsung Galaxy Tab A9+ LTE X216, 6/128, i hirtë", price: 249.50, rating: 4.2 },
-  { id:5, img: "images/card-6.jpeg", desc: "Tastierë Redragon K606 Lakshmi Red", price: 37.50, rating: 4.1 },
-  { id:6, img: "images/card-7.jpeg", desc: "Tastierë mekanike MediaTech ZONE MT1258, Cherry MX Red, e zezë", price: 35.00, rating: 3.8 },
-  { id:7, img: "images/card-8.webp", desc: "Çantë shpine Lenovo B210 për laptop, 15.6\"", price: 19.50, rating: 4.0 },
-
-  { id:8, img: "images/card-9.webp", desc: "Mauspad Iso Trade Trade, XXL, i zi", price: 9.50, rating: 3.5 },
-  { id:9, img: "images/card-10.webp", desc: "Karrige SENSE7 Spellcaster, e zezë", price: 119.50, rating: 4.4 },
-  { id:10, img: "images/card-11.webp", desc: "Tavolinë SENSE7 Classic Desk, 140cm x 60cm, e zezë", price: 99.50, rating: 4.1 },
-  { id:11, img: "images/card-12.webp", desc: "Laptop Lenovo LOQ, 15.6\", AMD Ryzen 5 7235HS, 16GB DDR5-SDRAM, 512GB SSD, NVIDIA GeForce RTX 3050, i hirtë", price: 689.50, rating: 4.6 },
-
-  { id:12, img: "images/card-13.webp", desc: "Set tastierë dhe maus Logitech Slim Wireless MK470, të bardha", price: 79.50, rating: 4.2 },
-  { id:13, img: "images/card-14.webp", desc: "Kompjuter Lenovo Gaming Legion T5 26IAB7, Intel Core i5-12400, 1TB SSD, 16 GB RAM, NVIDIA GeForce RTX 3060 Ti, i zi", price: 879.50, rating: 4.7 },
-  { id:14, img: "images/card-15.webp", desc: "Fshesë robotike Xiaomi S20, me shtupë, e bardhë", price: 169.50, rating: 4.3 },
-  { id:15, img: "images/card-16.webp", desc: "Monitor HP 27-inch Series, 27\", 1920 x 1080, 100 Hz, i bardhë", price: 179.50, rating: 4.0 },
-
-  { id:16, img: "images/card-17.webp", desc: "Procesor AMD Ryzen 7 9800X3D, Tray", price: 449.50, rating: 4.9 },
-  { id:17, img: "images/card-18.webp", desc: "Konzolë Nintendo Switch 2 + Mario Card World", price: 569.50, rating: 4.8 },
-  { id:18, img: "images/card-19.webp", desc: "Laptop Lenovo Legion PRO 7 16IAX10H, 16\", WQXGA, Intel Ultra9 275HX, 32GB RAM, 2TB SSD, Nvidia RTX 5080 16GB, i zi", price: 1349.50, rating: 4.9 },
-  { id:19, img: "images/card-20.webp", desc: "Celular Samsung Galaxy S25 Ultra, 6.9\", 12GB / 512GB, Titanium Gray", price: 3766.50, rating: 4.8 },
-
-  { id:20, img: "images/card-21.webp", desc: "Maus Kysona Jupiter Ultra dual 8k, i kuq", price: 59.50, rating: 4.2 },
-  { id:21, img: "images/card-22.webp", desc: "Karikues për bateri Dunlop 6/12 V 1A Lead & Gel", price: 53.50, rating: 3.6 },
-  { id:22, img: "images/card-23.webp", desc: "Laptop MSI Titan 18 HX A14VIG, 18\", 4K, Intel i9-14900HX, 128GB RAM, 2TB + 2TB SSD, RTX 4090, i zi", price: 5289.50, rating: 4.9 },
-  { id:23, img: "images/card-24.webp", desc: "Kufje HyperX Cloud III (727A9AA), të zeza / kuqe", price: 89.50, rating: 4.4 },
-
-  { id:24, img: "images/card-25.webp", desc: "Apple iPhone 17 Pro Max Clear Case with MagSafe", price: 69.50, rating: 4.1 },
-  { id:25, img: "images/card-26.webp", desc: "Karrige SENSE7 Spellcaster FUKU XL, material + lëkurë, e zezë / hirtë", price: 149.50, rating: 4.3 },
-  { id:26, img: "images/card-27.webp", desc: "Apple MacBook Air 13.6\", M2 8-core, 16GB, 256GB, 8-core GPU, Midnight", price: 1199.50, rating: 4.6 },
-  { id:27, img: "images/card-28.webp", desc: "Tablet muPAD L10, 10.1\", 4GB / 64GB, LTE, i argjendtë + Këllëf mbrojtës", price: 49.50, rating: 3.4 },
-
-  { id:28, img: "images/card-29.webp", desc: "Mauspad Krux Space Carpet MAX, XXXL, shumëngjyrësh", price: 29.50, rating: 3.9 },
-  { id:29, img: "images/card-30.webp", desc: "Thithëse elektrike Philips XB2125/09, 850 W, e kaltër", price: 149.90, rating: 4.2 },
-  { id:30, img: "images/card-31.webp", desc: "Apple AirPods Pro3 with MagSafe Case (USB-C)", price: 299.50, rating: 4.7 },
-  { id:31, img: "images/card-32.webp", desc: "Celular Samsung Galaxy A56 5G, 8/128GB, i zi", price: 359.50, rating: 4.1 },
-
-  { id:32, img: "images/card-33.webp", desc: "Monitorues për foshnje Avent SCD921/26", price: 419.50, rating: 4.5 },
-  { id:33, img: "images/card-34.webp", desc: "Celular Samsung Galaxy S25 Ultra, 6.9\", 12GB / 512GB, Titanium Black", price: 1349.50, rating: 4.8 },
-  { id:34, img: "images/card-35.webp", desc: "Fshesë robotike Xiaomi Robot Vacuum X10 EU", price: 492.50, rating: 4.4 },
-  { id:35, img: "images/card-36.webp", desc: "Maus Logitech MX Master 3S, grafit", price: 99.50, rating: 4.6 },
-
-  { id:36, img: "images/card-37.webp", desc: "Kuletë kartash për celular ESR, e kaftë", price: 19.50, rating: 3.7 }
-];
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -56,37 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItemsEl = document.getElementById("cart-items");
   const cartTotalEl = document.getElementById("cart-total");
   const cartBtn = document.getElementById("cart-btn");
-//   const checkoutBtn = document.getElementById("go-payment");
-  
-
-//   if (checkoutBtn) {
-//   checkoutBtn.addEventListener("click", () => {
-//     if (cart.length === 0) {
-//       alert("Your cart is empty");
-//       return;
-//     }
-
-//     // ✅ SAVE cart snapshot for payment page
-//     localStorage.setItem("checkoutCart", JSON.stringify(cart));
-
-//     // ✅ Redirect
-//     window.location.href = "payment.html";
-//   });
-// }
 
 
-  // ===================== SAFETY CHECK =====================
+  // SAFETY CHECK 
   if (typeof products === "undefined" || !Array.isArray(products)) {
     console.error("❌ products array is missing or invalid");
     return;
   }
 
-  // ===================== DATA STATE =====================
+  // DATA STATE 
   let filteredProducts = [...products];
   let visibleCount = 8;
   const STEP = 8;
 
-  // ===================== ELEMENTS =====================
+  // ELEMENTS 
   const productRows = document.getElementById("productRows");
   const searchBox = document.getElementById("searchbox");
   const btn = document.getElementById("toggleVisibility");
@@ -96,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // ===================== RENDER PRODUCTS =====================
+  // RENDER PRODUCTS 
   function renderProducts(list) {
     let html = "";
 
@@ -138,7 +72,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 // ADD TO CART
 productRows.addEventListener("click", (e) => {
 
-  // 1️⃣ ADD TO CART CLICK
+  // ADD TO CART CLICK
   const cartBtn = e.target.closest(".add-to-cart");
   if (cartBtn) {
     e.preventDefault();
@@ -349,7 +283,7 @@ function renderCart() {
   });
 
 
-  // ===================== SHOW MORE =====================
+  // SHOW MORE 
   if (btn) {
     btn.addEventListener("click", () => {
       visibleCount += STEP;
@@ -358,10 +292,10 @@ function renderCart() {
   }
 
 
-  // ===================== INITIAL RENDER =====================
+  // INITIAL RENDER 
   renderProducts(filteredProducts);
 
-  // ===================== EVENTS =====================
+  // EVENTS 
   if (searchBox) {
     searchBox.addEventListener("input", applyFilters);
   }
