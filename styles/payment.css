@@ -1,100 +1,95 @@
-/* ===== Base ===== */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #f4f6f5, #eef3f0);
+/* ===== Base Page ===== */
+.payment-page {
+  background: white;
   color: #333;
+  padding: 40px 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-/* ===== Page Theme ===== */
-.about-page {
-  background: transparent;
-}
-
-.about-page h1 {
+.payment-page h1 {
   font-weight: 700;
   color: #198754;
-  margin-bottom: 12px;
-  letter-spacing: 0.3px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.about-page .lead {
-  font-size: 1.05rem;
-  color: #666;
-  max-width: 700px;
-  margin-bottom: 45px;
-}
-
-/* ===== Cards ===== */
-.feature-card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 32px 24px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.14);
-}
-
-.feature-card h5 {
-  font-weight: 600;
-  margin-bottom: 18px;
-  color: #198754;
-}
-
-.feature-card p {
-  font-size: 0.95rem;
+.payment-page .lead {
+  text-align: center;
+  font-size: 1.1rem;
   color: #555;
-  margin: 6px 0;
+  margin-bottom: 40px;
 }
 
 /* ===== Layout ===== */
-.payment-wrapper {
+.payment-container {
+  max-width: 1000px;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px;
+  gap: 25px;
+}
+
+/* ===== Card Style (shared) ===== */
+.payment-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.payment-card h5 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #198754;
+}
+
+/* ===== Order Summary ===== */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 20px;
 }
 
 /* ===== Form ===== */
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .form-group label {
   display: block;
   font-size: 0.85rem;
   margin-bottom: 6px;
-  color: #444;
+  color: #555;
 }
 
 .form-group input {
-  width: 100%;
-  padding: 11px 12px;
+  width: 87%;
+  padding: 12px 14px;
   border-radius: 10px;
-  border: 1px solid #d0d5d3;
-  font-size: 0.9rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
 }
 
 .form-group input:focus {
   outline: none;
   border-color: #198754;
-  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.15);
 }
 
+/* ===== Inline Inputs ===== */
 .form-row {
   display: flex;
   gap: 15px;
@@ -103,89 +98,102 @@ body {
 /* ===== Button ===== */
 .pay-btn {
   width: 100%;
-  margin-top: 20px;
-  padding: 13px;
-  background: linear-gradient(135deg, #198754, #157347);
-  color: #fff;
-  border: none;
+  padding: 14px;
   border-radius: 12px;
-  font-size: 1rem;
+  border: none;
+  background: #198754;
+  color: white;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .pay-btn:hover {
+  background: #157347;
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(25, 135, 84, 0.35);
 }
 
-.pay-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.25);
+.payment-header {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 25px;
+  padding: 10px 0;
+  text-align: center;
+}
+.payment-header-text {
+  text-align: center;
 }
 
-@media (max-width: 786px) {
+.payment-logo {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 120px;
+  width: auto;
+}
 
-    .container{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
+
+.payment-header-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
 
 
-  .about-page {
-    padding: 20px 10px;
-  }
+.payment-header-text .lead {
+  margin-top: 4px;
+}
 
-  .about-page h1 {
-    font-size: 1.7rem;
-    text-align: center;
-  }
+.form-group input.error {
+  border-color: #dc3545;
+}
+.payment-header {
+  justify-content: space-between;
+}
 
-  .about-page .lead {
-    font-size: 0.95rem;
-    text-align: center;
-    margin-bottom: 25px;
-  }
+.payment-header {
+  justify-content: flex-start;
+}
 
-  .payment-wrapper {
+.payment-header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .payment-container {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
-
-  .feature-card {
-    padding: 20px 15px;
+   .payment-header {
+    flex-direction: column;
     text-align: center;
   }
 
-  .feature-card h5 {
-    font-size: 1rem;
+  .payment-header-text {
+    text-align: center;
   }
 
-  .feature-card p {
-    font-size: 0.9rem;
+   .payment-logo {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
   }
+}
 
+@media (max-width: 500px) {
   .form-row {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .form-group label {
-    font-size: 0.85rem;
-    text-align: left;
-  }
-
-  .form-group input {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
-
-  .pay-btn {
-    font-size: 1rem;
-    padding: 14px;
-    margin-top: 15px;
   }
 }
+
 
