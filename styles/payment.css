@@ -1,0 +1,191 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #f4f6f5, #eef3f0);
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+/* ===== Page Theme ===== */
+.about-page {
+  background: transparent;
+}
+
+.about-page h1 {
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.about-page .lead {
+  font-size: 1.05rem;
+  color: #666;
+  max-width: 700px;
+  margin-bottom: 45px;
+}
+
+/* ===== Cards ===== */
+.feature-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.14);
+}
+
+.feature-card h5 {
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #198754;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 6px 0;
+}
+
+/* ===== Layout ===== */
+.payment-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+/* ===== Form ===== */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d5d3;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #198754;
+  box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.15);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== Button ===== */
+.pay-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  background: linear-gradient(135deg, #198754, #157347);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(25, 135, 84, 0.35);
+}
+
+.pay-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(25, 135, 84, 0.25);
+}
+
+@media (max-width: 786px) {
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+
+  .about-page {
+    padding: 20px 10px;
+  }
+
+  .about-page h1 {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  .about-page .lead {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .payment-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .feature-card h5 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .form-group input {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .pay-btn {
+    font-size: 1rem;
+    padding: 14px;
+    margin-top: 15px;
+  }
+}
+
